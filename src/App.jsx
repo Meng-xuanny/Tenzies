@@ -14,6 +14,7 @@ export default function App() {
     const allSameValue = dice.every((die) => die.value === firstValue);
     if (allHeld && allSameValue) {
       setTenzies(true);
+      setCount((prevCount) => prevCount + 1);
     }
   }, [dice]);
 
@@ -43,7 +44,6 @@ export default function App() {
     } else {
       setTenzies(false);
       setDice(allNewDice());
-      setCount((prevCount) => prevCount + 1);
     }
   }
 
